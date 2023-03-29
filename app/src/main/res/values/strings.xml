@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Made Submission</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="no_data">Empty data found</string>
+    <string name="error">Oops.. something went wrong, please try again later</string>
+    <string name="menu_favorite">Favorite</string>
+    <string name="image_description">Image</string>
+    <string name="text_primary">Sample of title text</string>
+    <string name="title_favorite">Module Title</string>
+      <string name="title_favourite">favourite</string>
+</resources>
