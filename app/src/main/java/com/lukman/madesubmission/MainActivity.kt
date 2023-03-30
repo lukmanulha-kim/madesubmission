@@ -3,6 +3,7 @@ package com.lukman.madesubmission
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.navigation.findNavController
+import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
@@ -22,10 +23,11 @@ class MainActivity : AppCompatActivity() {
 
         val navView: BottomNavigationView = findViewById(R.id.bottomNav)
 
-        val navController = findNavController(R.id.nav_host_fragment)
+        val navigationHost = supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
+        val navController = navigationHost.navController
 
         val appBarConfiguration = AppBarConfiguration.Builder(
-            R.id.homeFragment, R.id.favFragment
+            R.id.homeFragment, R.id.favoriteFragment
         ).build()
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)

@@ -41,7 +41,7 @@ android {
         viewBinding = true
     }
     buildToolsVersion '33.0.1'
-    dynamicFeatures = [':fav']
+    dynamicFeatures = [':favorite']
 }
 
 dependencies {
