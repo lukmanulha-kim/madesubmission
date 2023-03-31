@@ -8,16 +8,22 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.lukman.madesubmission.ViewModelFactory
 import com.lukman.madesubmission.core.ui.GameAdapter
-import com.lukman.madesubmission.databinding.FragmentFavoriteBinding
+import com.lukman.madesubmission.favourite.databinding.FragmentFavoriteBinding
 import com.lukman.madesubmission.detail.DetailActivity
 import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
 @AndroidEntryPoint
 class FavoriteFragment : Fragment() {
 
+    @Inject
+    lateinit var factory: ViewModelFactory
 
-    private val favoriteViewModel: FavouriteViewModel by viewModels()
+    private val favoriteViewModel: FavouriteViewModel by viewModels {
+        factory
+    }
 
     private var _binding: FragmentFavoriteBinding? = null
     private val binding get() = _binding!!

@@ -6,7 +6,7 @@ import kotlinx.coroutines.flow.Flow
 
 interface GameUseCase {
 
-    fun getAllGame(): Flow<com.lukman.madesubmission.core.data.source.Resource<List<Game>>>
+    fun getAllGame(): Flow<Resource<List<Game>>>
     fun getFavoriteGame(): Flow<List<Game>>
     fun setFavoriteGame(game: Game, state: Boolean)
 
