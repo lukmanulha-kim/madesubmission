@@ -56,23 +56,23 @@ class FavoriteFragment : Fragment() {
 
     if (activity != null) {
 
-      val tourismAdapter = GameAdapter()
-      tourismAdapter.onItemClick = { selectedData ->
+      val gameAdapter = GameAdapter()
+      gameAdapter.onItemClick = { selectedData ->
         val intent = Intent(activity, DetailActivity::class.java)
         intent.putExtra(DetailActivity.EXTRA_DATA, selectedData)
         startActivity(intent)
       }
 
-      favoriteViewModel.favoriteGame.observe(viewLifecycleOwner) { dataTourism ->
-        tourismAdapter.setData(dataTourism)
+      favoriteViewModel.favoriteGame.observe(viewLifecycleOwner) { dataGame ->
+        gameAdapter.setData(dataGame)
         binding.viewEmpty.root.visibility =
-          if (dataTourism.isNotEmpty()) View.GONE else View.VISIBLE
+          if (dataGame.isNotEmpty()) View.GONE else View.VISIBLE
       }
 
       with(binding.rvGame) {
         layoutManager = LinearLayoutManager(context)
         setHasFixedSize(true)
-        adapter = tourismAdapter
+        adapter = gameAdapter
       }
     }
   }
