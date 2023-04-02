@@ -17,12 +17,12 @@ class DatabaseModule {
 
     @Singleton
     @Provides
-    fun provideDatabase(@ApplicationContext context: Context): com.lukman.madesubmission.core.data.source.local.room.GameDatabase = Room.databaseBuilder(
+    fun provideDatabase(@ApplicationContext context: Context): GameDatabase = Room.databaseBuilder(
         context,
-        com.lukman.madesubmission.core.data.source.local.room.GameDatabase::class.java, "Game.db"
+        GameDatabase::class.java, "Game.db"
     ).fallbackToDestructiveMigration().build()
 
     @Provides
-    fun provideTourismDao(database: com.lukman.madesubmission.core.data.source.local.room.GameDatabase): com.lukman.madesubmission.core.data.source.local.room.GameDao = database.gameDao()
+    fun provideTourismDao(database: GameDatabase): GameDao = database.gameDao()
 
 }

@@ -12,6 +12,6 @@ import dagger.hilt.components.SingletonComponent
 abstract class RepositoryModule {
 
     @Binds
-    abstract fun provideRepository(gameRepository: com.lukman.madesubmission.core.data.source.GameRepository): IGameRepository
+    abstract fun provideRepository(gameRepository: GameRepository): IGameRepository
 
 }

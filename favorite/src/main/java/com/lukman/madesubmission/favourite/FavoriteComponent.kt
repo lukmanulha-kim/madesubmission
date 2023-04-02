@@ -1,8 +1,7 @@
-package com.lukman.madesubmission
+package com.lukman.madesubmission.favourite
 
 import android.content.Context
 import com.lukman.madesubmission.di.FavoriteModuleDependencies
-import com.lukman.madesubmission.favourite.FavoriteFragment
 import dagger.BindsInstance
 import dagger.Component
 

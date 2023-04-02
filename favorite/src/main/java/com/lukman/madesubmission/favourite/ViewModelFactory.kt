@@ -1,9 +1,8 @@
-package com.lukman.madesubmission
+package com.lukman.madesubmission.favourite
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.lukman.madesubmission.core.domain.usecase.GameUseCase
-import com.lukman.madesubmission.favourite.FavouriteViewModel
 import javax.inject.Inject
 
 @Suppress("UNCHECKED_CAST")

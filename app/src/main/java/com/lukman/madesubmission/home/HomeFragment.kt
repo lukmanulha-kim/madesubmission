@@ -1,6 +1,5 @@
 package com.lukman.madesubmission.home
 
-import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -10,14 +9,12 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.lukman.madesubmission.MyApplication
 import com.lukman.madesubmission.R
 import com.lukman.madesubmission.core.data.source.Resource
 import com.lukman.madesubmission.core.ui.GameAdapter
 import com.lukman.madesubmission.databinding.FragmentHomeBinding
 import com.lukman.madesubmission.detail.DetailActivity
 import dagger.hilt.android.AndroidEntryPoint
-import javax.inject.Inject
 
 @AndroidEntryPoint
 class HomeFragment : Fragment() {
