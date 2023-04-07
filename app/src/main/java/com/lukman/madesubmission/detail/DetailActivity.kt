@@ -1,16 +1,15 @@
 package com.lukman.madesubmission.detail
 
+import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.core.content.ContextCompat
 import com.bumptech.glide.Glide
-import com.lukman.madesubmission.MyApplication
 import com.lukman.madesubmission.R
 import com.lukman.madesubmission.core.domain.model.Game
 import com.lukman.madesubmission.databinding.ActivityDetailBinding
 import dagger.hilt.android.AndroidEntryPoint
-import javax.inject.Inject
 
 @AndroidEntryPoint
 class DetailActivity : AppCompatActivity() {
@@ -35,11 +34,12 @@ class DetailActivity : AppCompatActivity() {
         showDetailGame(detailGame)
     }
 
+    @SuppressLint("SetTextI18n")
     private fun showDetailGame(detailGame: Game?) {
         detailGame?.let {
             binding.tvGamename.text = detailGame.name
             binding.tvGamereleased.text = detailGame.released
-            binding.tvRating.text = detailGame.rating.toString()+"/"+detailGame.rating_top.toString()
+            binding.tvRating.text = "${detailGame.rating}/${detailGame.rating_top}"
             Glide.with(this@DetailActivity)
                 .load(detailGame.background_image)
                 .into(binding.ivGameimage)
