@@ -64,6 +64,6 @@ dependencies {
     api "androidx.navigation:navigation-dynamic-features-fragment:$nav_version"
 
 //    sqlcipher
-    implementation "net.zetetic:android-database-sqlcipher:4.4.0"
-    implementation "androidx.sqlite:sqlite-ktx:2.1.0"
+    implementation 'net.zetetic:android-database-sqlcipher:4.5.3'
+    implementation "androidx.sqlite:sqlite-ktx:2.3.1"
 }
