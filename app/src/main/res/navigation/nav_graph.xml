@@ -16,6 +16,7 @@
             app:popExitAnim="@anim/nav_default_pop_exit_anim"/>
     </fragment>
 
+    <!--suppress AndroidDomInspection -->
     <fragment
         android:id="@+id/favoriteFragment"
         android:name="com.lukman.madesubmission.favourite.FavoriteFragment"
