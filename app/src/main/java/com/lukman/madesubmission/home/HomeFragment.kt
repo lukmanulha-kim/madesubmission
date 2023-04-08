@@ -39,26 +39,27 @@ class HomeFragment : Fragment() {
 
         if (activity != null) {
 
-            val tourismAdapter = GameAdapter()
-            tourismAdapter.onItemClick = { selectedData ->
+            val gameAdapter = GameAdapter()
+            gameAdapter.onItemClick = { selectedData ->
                 val intent = Intent(activity, DetailActivity::class.java)
                 intent.putExtra(DetailActivity.EXTRA_DATA, selectedData)
                 startActivity(intent)
             }
 
-            homeViewModel.game.observe(viewLifecycleOwner) { tourism ->
-                if (tourism != null) {
-                    when (tourism) {
+            homeViewModel.game.observe(viewLifecycleOwner) { game ->
+                if (game != null) {
+                    when (game) {
                         is Resource.Loading -> binding.progressBar.visibility = View.VISIBLE
                         is Resource.Success -> {
                             binding.progressBar.visibility = View.GONE
-                            tourismAdapter.setData(tourism.data)
+//                            gameAdapter.setData(game.data)
+                            gameAdapter.differ.submitList(game.data)
                         }
                         is Resource.Error -> {
                             binding.progressBar.visibility = View.GONE
                             binding.viewError.root.visibility = View.VISIBLE
                             binding.viewError.tvError.text =
-                                tourism.message ?: getString(R.string.error)
+                                game.message ?: getString(R.string.error)
                         }
                     }
                 }
@@ -67,7 +68,7 @@ class HomeFragment : Fragment() {
             with(binding.rvGame) {
                 layoutManager = LinearLayoutManager(context)
                 setHasFixedSize(true)
-                adapter = tourismAdapter
+                adapter = gameAdapter
             }
         }
     }

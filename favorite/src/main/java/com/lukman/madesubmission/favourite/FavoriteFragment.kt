@@ -64,7 +64,7 @@ class FavoriteFragment : Fragment() {
       }
 
       favoriteViewModel.favoriteGame.observe(viewLifecycleOwner) { dataGame ->
-        gameAdapter.setData(dataGame)
+        gameAdapter.differ.submitList(dataGame)
         binding.viewEmpty.root.visibility =
           if (dataGame.isNotEmpty()) View.GONE else View.VISIBLE
       }
